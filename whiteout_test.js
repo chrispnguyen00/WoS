@@ -46,11 +46,11 @@ function checkScreenshots(scrn) {
     var screenshots = {
         popup_ad: {
             location: "pictures/firstad.png",
-            score: 0.50
+            score: 0.80
         },
         home_screen: {
             location: "pictures/homescreen.png",
-            score: 0.50
+            score: 0.80
         }
     }
     
