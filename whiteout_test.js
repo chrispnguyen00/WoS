@@ -20,7 +20,7 @@ if(Android.connected()) {
     Helper.log("No device connected!");
 }
 
-async function main() {
+function main() {
     Helper.log("Welcome to WoS Farm Bot v1");
     Helper.log("Checking if the game is installed...");
     Helper.log("Trying to start the game...");
