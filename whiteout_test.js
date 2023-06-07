@@ -7,7 +7,7 @@ var screenshots = {
         score: 0.91
     },
     home_screen: {
-        location: "pictures/homescreen.png",
+        location: "pictures/homescreen1.png",
         score: 0.89
     }
 }
