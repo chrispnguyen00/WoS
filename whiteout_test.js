@@ -4,11 +4,11 @@ var appPackage = "com.gof.global"
 var screenshots = {
     popup_ad: {
         location: "pictures/firstad.png",
-        score: 0.90
+        score: 0.91
     },
     home_screen: {
         location: "pictures/homescreen.png",
-        score: 0.90
+        score: 0.91
     }
 }
 
