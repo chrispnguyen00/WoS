@@ -7,7 +7,7 @@ var screenshots = {
         score: 0.91
     },
     home_screen: {
-        location: "pictures/homescreen1.png",
+        location: "pictures/homescreen.png",
         score: 0.9
     }
 }
@@ -96,8 +96,6 @@ function detectState(results) {
 }
 
 function actionState(state, results) {
-    var exitpoint = new Point(0, 1000)
-    var worldmap = new Point(1000, 1000);
     if (state == "popup_ad") {
         Android.sendTap(results.popup_ad[0].getRect().getBottomLeft())
         return true;
