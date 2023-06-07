@@ -8,7 +8,7 @@ var screenshots = {
     },
     home_screen: {
         location: "pictures/homescreen.png",
-        score: 0.9
+        score: 0.89
     }
 }
 
@@ -25,6 +25,7 @@ function main() {
     Helper.log("Checking if the game is installed...");
     Helper.log("Trying to start the game...");
     Android.startApp(appPackage);
+    Helper.sleep(10);
     gameLoop();
 }
 
