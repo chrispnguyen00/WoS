@@ -1,16 +1,16 @@
 //Global Variables needed
 var appPackage = "com.gof.global"
 
-// var screenshots = {
-//     popup_ad: {
-//         location: "pictures/firstad.png",
-//         score: 0.99
-//     },
-//     home_screen: {
-//         location: "pictures/homescreen.png",
-//         score: 0.99
-//     }
-// }
+var screenshots = {
+    popup_ad: {
+        location: "pictures/firstad.png",
+        score: 0.99
+    },
+    home_screen: {
+        location: "pictures/homescreen.png",
+        score: 0.99
+    }
+}
 
 //This chunk of code runs first before following main()'s logic flow
 if(Android.connected()) {
@@ -43,17 +43,6 @@ function gameLoop() {
 }
 
 function checkScreenshots(scrn) {
-    var screenshots = {
-        popup_ad: {
-            location: "pictures/firstad.png",
-            score: 0.80
-        },
-        home_screen: {
-            location: "pictures/homescreen.png",
-            score: 0.80
-        }
-    }
-    
     var allmatches = [];
     var results = {};
 
