@@ -96,14 +96,15 @@ function detectState(results) {
 }
 
 function actionState(state, results) {
-    //var exitpoint = new PointerEvent()
+    var exitpoint = new PointerEvent(0, 100)
+    var worldmap = new PointerEvent(100, 100);
     if (state == "popup_ad") {
-        Android.sendTap(0, 100);
+        Android.sendTap(exitpoint);
         return true;
     }
 
     if (state == "home_screen") {
-        Android.sendTap(100, 100);
+        Android.sendTap(worldmap);
         return true;
     }
 }
