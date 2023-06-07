@@ -99,7 +99,7 @@ function actionState(state, results) {
     var exitpoint = new Point(0, 1000)
     var worldmap = new Point(1000, 1000);
     if (state == "popup_ad") {
-        Android.sendTap(exitpoint);
+        Android.sendTap(results.popup_ad[0].getRect().getBottomLeft())
         return true;
     }
 
@@ -107,4 +107,11 @@ function actionState(state, results) {
         Android.sendTap(worldmap);
         return true;
     }
+}
+
+function AndroidBottomRightTap(match) {
+    if(Android.sendTap(match.getRect().getBottomRight())) {
+        return true;
+    }
+    return false;
 }
