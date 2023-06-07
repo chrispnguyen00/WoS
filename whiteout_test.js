@@ -30,6 +30,7 @@ function main() {
 
 function gameLoop() {
     var cont = 1;
+    var lastActionResult = true;
     while (cont) {
         var size = Android.getSize();
         Helper.log(size);
@@ -39,6 +40,17 @@ function gameLoop() {
         var state = detectState(results);
 
         Helper.log("Determined state: " + state);
+
+        if(actionState(state, results)) {
+            Helper.log("Current loop finished!");
+        } else {
+            if(lastActionResult) {
+                Helper.log("Encountered a Problem, trying again!");
+            } else {
+                Helper.log("Encountered a Problem on action!");
+                return 1;
+            }
+        }
     }
 }
 
@@ -81,4 +93,17 @@ function detectState(results) {
     }
 
     return "unknown";
+}
+
+function actionState(state, results) {
+    var exitpoint = new PointerEvent()
+    if (state == "popup_ad") {
+        Android.sendTap(0, 100);
+        return true;
+    }
+
+    if (state == "home_screen") {
+        Android.sendTap(100, 100);
+        return true;
+    }
 }
