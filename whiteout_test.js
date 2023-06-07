@@ -104,7 +104,7 @@ function actionState(state, results) {
     }
 
     if (state == "home_screen") {
-        Android.sendTap(worldmap);
+        Android.sendTap(results.home_screen[0].getRect().getBottomRight());
         return true;
     }
 }
