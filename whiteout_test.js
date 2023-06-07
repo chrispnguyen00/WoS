@@ -25,12 +25,8 @@ async function main() {
     Helper.log("Checking if the game is installed...");
     Helper.log("Trying to start the game...");
     Android.startApp(appPackage);
-    await sleep(10000); 
+    setTimeout(gameLoop, 10000);
     gameLoop();
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function gameLoop() {
