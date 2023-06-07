@@ -36,7 +36,11 @@ function gameLoop() {
 
         var scrn = Android.takeScreenshot();
         var results = checkScreenshots(scrn);
-        Helper.log("Determined result: " + results);
+        
+        for (const key of Object.keys(results)) {
+            Helper.log(results[key])
+        }
+
         var state = detectState(results);
 
         Helper.log("Determined state: " + state);
