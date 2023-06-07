@@ -96,8 +96,8 @@ function detectState(results) {
 }
 
 function actionState(state, results) {
-    var exitpoint = new PointerEvent(0, 100)
-    var worldmap = new PointerEvent(100, 100);
+    var exitpoint = new Point(0, 100)
+    var worldmap = new Point(100, 100);
     if (state == "popup_ad") {
         Android.sendTap(exitpoint);
         return true;
