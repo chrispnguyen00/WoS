@@ -36,6 +36,7 @@ function gameLoop() {
 
         var scrn = Android.takeScreenshot();
         var results = checkScreenshots(scrn);
+        Helper.log("Determined result: " + results);
         var state = detectState(results);
 
         Helper.log("Determined state: " + state);
@@ -80,7 +81,7 @@ function checkScreenshots(scrn) {
 
 function detectState(results) {
     var resultKeys = Object.keys(results);
-    Helper.log("Trying to determine gamestate from the following: " + resultKeys);
+    //Helper.log("Trying to determine gamestate from the following: " + resultKeys);
     if(typeof(results.home_screen) == "object" && Object.keys(results.home_screen).length > 0) {
         Helper.log("Detected Main Screen");
         return "home_screen";
