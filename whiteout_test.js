@@ -54,7 +54,7 @@ function checkScreenshots(scrn) {
         }
     }
     
-    var allmatches = {};
+    var allmatches = [];
     var results = {};
 
     Object.keys(screenshots).forEach(function(key) {
