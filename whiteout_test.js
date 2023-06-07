@@ -29,6 +29,10 @@ function main() {
     gameLoop();
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function gameLoop() {
     var cont = 1;
     while (cont) {
