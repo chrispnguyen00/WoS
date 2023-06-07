@@ -36,11 +36,6 @@ function gameLoop() {
 
         var scrn = Android.takeScreenshot();
         var results = checkScreenshots(scrn);
-        
-        for (const key of Object.keys(results)) {
-            Helper.log(results[key])
-        }
-
         var state = detectState(results);
 
         Helper.log("Determined state: " + state);
@@ -51,11 +46,11 @@ function checkScreenshots(scrn) {
     var screenshots = {
         popup_ad: {
             location: "pictures/firstad.png",
-            score: 0.99
+            score: 0.50
         },
         home_screen: {
             location: "pictures/homescreen.png",
-            score: 0.99
+            score: 0.50
         }
     }
     
