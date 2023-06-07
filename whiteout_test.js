@@ -97,15 +97,20 @@ function detectState(results) {
 }
 
 function actionState(state, results) {
+    var point = new Point(-100, 0)
     if (state == "popup_ad") {
         Android.sendTap(results.popup_ad[0].getRect().getBottomLeft())
         return true;
     }
-
-    if (state == "home_screen") {
-        Android.sendTap(results.home_screen[0].getRect().getBottomRight());
+    else {
+        Android.sendTap(point);
         return true;
     }
+
+    // if (state == "home_screen") {
+    //     Android.sendTap(results.home_screen[0].getRect().getBottomRight());
+    //     return true;
+    // }
 }
 
 function AndroidBottomRightTap(match) {
