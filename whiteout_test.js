@@ -97,7 +97,7 @@ function detectState(results) {
 }
 
 function actionState(state, results) {
-    var point = new Point(-100, 0)
+    var point = new Point(-100, 100)
     if (state == "popup_ad") {
         Android.sendTap(results.popup_ad[0].getRect().getBottomLeft())
         return true;
