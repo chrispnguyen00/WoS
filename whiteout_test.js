@@ -59,11 +59,11 @@ function checkScreenshots(scrn) {
         }
     });
 
-    Helper.log(allmatches.length + " Matches for various checks found.");
-    if(Config.getValue("prntMatches")) {
-        scrnmatches = Vision.markMatches(scrn, allmatches, magenta, 4);
-        scrnmatches.save("scrnmatches.png");
-    }
+    //Helper.log(allmatches.length + " Matches for various checks found.");
+    // if(Config.getValue("prntMatches")) {
+    //     scrnmatches = Vision.markMatches(scrn, allmatches, magenta, 4);
+    //     scrnmatches.save("scrnmatches.png");
+    // }
     return results;
 }
 
