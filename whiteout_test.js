@@ -25,7 +25,7 @@ function main() {
     Helper.log("Checking if the game is installed...");
     Helper.log("Trying to start the game...");
     Android.startApp(appPackage);
-    setTimeout(gameLoop, 10000);
+    //setTimeout(gameLoop, 10000);
     gameLoop();
 }
 
@@ -61,6 +61,10 @@ function checkScreenshots(scrn) {
     });
 
     Helper.log(allmatches.length + " Matches for various checks found.");
+    if(Config.getValue("prntMatches")) {
+        scrnmatches = Vision.markMatches(scrn, allmatches, magenta, 4);
+        scrnmatches.save("scrnmatches.png");
+    }
     return results;
 }
 
