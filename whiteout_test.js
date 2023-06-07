@@ -25,7 +25,10 @@ function main() {
     Helper.log("Checking if the game is installed...");
     Helper.log("Trying to start the game...");
     Android.startApp(appPackage);
-    gameLoop();
+    setTimeout(function() {
+        gameLoop();
+    }, 10000);
+    
 }
 
 function gameLoop() {
