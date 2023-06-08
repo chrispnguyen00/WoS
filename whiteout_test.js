@@ -32,30 +32,27 @@ function main() {
 function gameLoop() {
     var cont = 1;
     var lastActionResult = true;
-    // while (cont) {
-    //     var size = Android.getSize();
-    //     Helper.log(size);
+    while (cont) {
+        var size = Android.getSize();
+        Helper.log(size);
 
-    //     var scrn = Android.takeScreenshot();
-    //     var results = checkScreenshots(scrn);
-    //     var state = detectState(results);
+        var scrn = Android.takeScreenshot();
+        var results = checkScreenshots(scrn);
+        var state = detectState(results);
 
-    //     Helper.log("Determined state: " + state);
+        Helper.log("Determined state: " + state);
 
-    //     if(actionState(state, results)) {
-    //         Helper.log("Current loop finished!");
-    //     } else {
-    //         if(lastActionResult) {
-    //             Helper.log("Encountered a Problem, trying again!");
-    //         } else {
-    //             Helper.log("Encountered a Problem on action!");
-    //             return 1;
-    //         }
-    //     }
-    // }
-    var scrn = Android.takeScreenshot();
-    scrn.save("output.png");
-    return 1;
+        if(actionState(state, results)) {
+            Helper.log("Current loop finished!");
+        } else {
+            if(lastActionResult) {
+                Helper.log("Encountered a Problem, trying again!");
+            } else {
+                Helper.log("Encountered a Problem on action!");
+                return 1;
+            }
+        }
+    }
 }
 
 function checkScreenshots(scrn) {
