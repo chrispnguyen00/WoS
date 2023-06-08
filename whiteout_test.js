@@ -25,7 +25,7 @@ function main() {
     Helper.log("Checking if the game is installed...");
     Helper.log("Trying to start the game...");
     Android.startApp(appPackage);
-    Helper.sleep(10);
+    Helper.sleep(13);
     gameLoop();
 }
 
@@ -58,13 +58,13 @@ function gameLoop() {
 function checkScreenshots(scrn) {
     var allmatches = [];
     var results = {};
-
+    var tmpyscrn = new Image(scrn);
     Object.keys(screenshots).forEach(function(key) {
         var vals = screenshots[key];
         Helper.log("Comparing current screenshot with " + vals.location + " Min Score: " + vals.score);
         //Try to find matches
         var template = new Image(vals.location);
-        var matches = Vision.findMatches(scrn, template, vals.score);
+        var matches = Vision.findMatches(tmpyscrn, template, vals.score);
         //Set results
         if(matches.length > 0) {
             allmatches = allmatches.concat(matches);
