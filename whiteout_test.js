@@ -1,17 +1,6 @@
 //Global Variables needed
 var appPackage = "com.gof.global"
 
-var screenshots = {
-    popup_ad: {
-        location: "pictures/firstad.png",
-        score: 0.91
-    },
-    home_screen: {
-        location: "pictures/world.png",
-        score: 0.95
-    }
-}
-
 //This chunk of code runs first before following main()'s logic flow
 if(Android.connected()) {
     Helper.log("Found Device, trying to start bot...");
@@ -25,7 +14,7 @@ function main() {
     Helper.log("Checking if the game is installed...");
     Helper.log("Trying to start the game...");
     Android.startApp(appPackage);
-    Helper.sleep(20);
+    Helper.sleep(13);
     gameLoop();
 }
 
@@ -56,6 +45,17 @@ function gameLoop() {
 }
 
 function checkScreenshots(scrn) {
+    var screenshots = {
+        popup_ad: {
+            location: "pictures/firstad.png",
+            score: 0.91
+        },
+        home_screen: {
+            location: "pictures/world.png",
+            score: 0.95
+        }
+    }
+    
     var allmatches = [];
     var results = {};
     
@@ -102,15 +102,15 @@ function actionState(state, results) {
         Android.sendTap(results.popup_ad[0].getRect().getBottomLeft())
         return true;
     }
-    // else {
-    //     Android.sendTap(point);
-    //     return true;
-    // }
-
-    if (state == "home_screen") {
-        Android.sendTap(results.home_screen[0].getRect().getBottomRight());
+    else {
+        Android.sendTap(new Point(970, 1815));
         return true;
     }
+
+    // if (state == "home_screen") {
+    //     Android.sendTap(results.home_screen[0].getRect().getBottomRight());
+    //     return true;
+    // }
 }
 
 function AndroidBottomRightTap(match) {
