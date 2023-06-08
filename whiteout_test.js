@@ -8,7 +8,7 @@ var screenshots = {
     },
     home_screen: {
         location: "pictures/world.png",
-        score: 0.99
+        score: 0.90
     }
 }
 
@@ -58,13 +58,13 @@ function gameLoop() {
 function checkScreenshots(scrn) {
     var allmatches = [];
     var results = {};
-    var tmpyscrn = new Image(scrn);
+    
     Object.keys(screenshots).forEach(function(key) {
         var vals = screenshots[key];
         Helper.log("Comparing current screenshot with " + vals.location + " Min Score: " + vals.score);
         //Try to find matches
         var template = new Image(vals.location);
-        var matches = Vision.findMatches(tmpyscrn, template, vals.score);
+        var matches = Vision.findMatches(scrn, template, vals.score);
         //Set results
         if(matches.length > 0) {
             allmatches = allmatches.concat(matches);
